@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CompanyController;
+use App\Http\Controllers\PegawaiController;
+use App\Http\Controllers\ContactController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -22,3 +24,8 @@ Route::get('/hello-world', function () {
 });
 
 Route::resource('/companies', CompanyController::class);
+
+Route::get('/pegawai/{name}', [PegawaiController::class, 'show']);
+
+Route::get('/contact', [ContactController::class, 'index']);
+Route::post('/contact', [ContactController::class, 'store']);
